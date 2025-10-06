@@ -30,6 +30,18 @@ body {
 .e-bigger {
     font-size: x-large;
 }
+/*button*/
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none ;
+}
+
+/*HyperLinks*/
+.no-a-decoration, .no-a-decoration:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 /*Grid*/
 .e-grid {
