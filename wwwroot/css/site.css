@@ -13,8 +13,12 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    font-family: "Inter";
+}
+*:not(.fa-solid):not(.fa):not(.e-icons){
+    font-family: "Inter";
 }
 
 body {
