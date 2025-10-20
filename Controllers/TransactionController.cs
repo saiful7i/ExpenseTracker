@@ -25,7 +25,7 @@ namespace Expense_Tracker.Controllers
         public IActionResult AddOrEdit()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategroyId", "CategroyId");
-            return View();
+            return View(new Transaction());
         }
 
         // POST: Transaction/AddOrEdit
