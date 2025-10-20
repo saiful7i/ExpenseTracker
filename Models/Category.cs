@@ -7,11 +7,11 @@ namespace Expense_Tracker.Models
     public class Category
     {
         [Key]
-        public int CategroyId { get; set; }
+        public int CategoryId { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]  
+        [Column(TypeName = "nvarchar(50)")]
         public string Title { get; set; }
-        
+
         [Column(TypeName = "nvarchar(5)")]
         public string Icon { get; set; } = "";
 

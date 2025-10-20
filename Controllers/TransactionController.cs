@@ -1,6 +1,5 @@
 ﻿using Expense_Tracker.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Expense_Tracker.Controllers
@@ -24,7 +23,7 @@ namespace Expense_Tracker.Controllers
         // GET: Transaction/AddOrEdit
         public IActionResult AddOrEdit()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategroyId", "CategroyId");
+            PopulateCategories();
             return View(new Transaction());
         }
 
@@ -41,7 +40,8 @@ namespace Expense_Tracker.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategroyId", "CategroyId", transaction.CategoryId);
+
+            PopulateCategories();
             return View(transaction);
         }
 
@@ -61,6 +61,14 @@ namespace Expense_Tracker.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [NonAction]
+        public void PopulateCategories()
+        {
+            var CategoryCollection = _context.Categories.ToList();
+            Category DefaultCategory = new Category() { CategroyId = 0, Title = "Choose a Category" };
+            CategoryCollection.Insert(0, DefaultCategory);
+            ViewBag.Categories = CategoryCollection;
+        }
 
     }
 }

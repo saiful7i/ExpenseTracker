@@ -35,11 +35,11 @@
 
 <script id="actionsColumnTemplate" type="text/x-template">
     <div class="d-flex flex-row justify-content-center">
-        <a class="btn btn-sm no-a-decoration" href="/Category/AddOrEdit/${CategroyId}">
+        <a class="btn btn-sm no-a-decoration" href="/Category/AddOrEdit/${CategoryId}">
             <i class="fa-solid fa-pen fa-lg"></i>
         </a>
 
-        <form action="/Category/Delete/${CategroyId}" method="post">
+        <form action="/Category/Delete/${CategoryId}" method="post">
         @Html.AntiForgeryToken()
             <button type="submit" class="btn btn-sm btn-link no-a-decoration"onclick="return confirm(&quot;Are you sure to delete this record?&quot;)">
             <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
@@ -83,9 +83,9 @@
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
-                <a asp-action="AddOrEdit" asp-route-id="@item.CategroyId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CategroyId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategroyId">Delete</a>
+                <a asp-action="AddOrEdit" asp-route-id="@item.CategoryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
             </td>
         </tr>
 }

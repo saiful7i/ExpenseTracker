@@ -10,7 +10,7 @@ namespace Expense_Tracker.Models
 
         //CatergoryId as foreign key
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
 
         public int Amount { get; set; }
 
