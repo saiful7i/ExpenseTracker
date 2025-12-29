@@ -1,15 +1,11 @@
 ﻿@model IEnumerable<WebApplication1.Models.Category>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["PageTitle"] = "Category Management";
+    ViewData["PageActionText"] = "+ New Category";
+    ViewData["PageActionUrl"] = "/Category/AddorEdit";
+
 }
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="AddorEdit">Create New</a>
-</p>
-
 
 <div class="row">
     <div class="col-md-7">
@@ -44,7 +40,7 @@
         </a>
         <form action="/Category/Delete/${categoryId}" method="post">
             @Html.AntiForgeryToken()
-            <button type="submit" class="btn btn-sm btn-link no-a-decoration" onclick="return confirm($quot;Are you sure to delete this record?$quot;)">
+            <button type="submit" class="btn btn-sm btn-link no-a-decoration" onclick="return confirm(&quot;Are you sure to delete this record?&quot;)">
                 <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
             </button>
         </form>

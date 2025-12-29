@@ -1,7 +1,7 @@
 ﻿@model WebApplication1.Models.Category
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["PageTitle"] = Model.categoryId==0 ? "Create a new Category":"Edit Category";
 }
 
 <div class="row">
@@ -37,10 +37,6 @@
             <i class="fa-solid fa-shapes fa-2xl"></i>
         </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

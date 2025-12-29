@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApplication1</title>
+    <title>Expense Tracker</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <!-- Syncfusion ASP.NET Core controls styles -->
     @* <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/32.1.19/material.css" /> *@
@@ -44,17 +44,34 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <main role="main" class="pb-3">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="d-flex flex-column mb-5">
+                                <div class="d-flex mb-1">
+                                    <div class="flex-grow-1">
+                                        <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
+                                    </div>
+                                    <div>
+                                        @if (ViewData["PageActionText"] != null)
+                                        {
+                                            <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
+                                                @ViewData["PageActionText"]
+                                            </a>
+                                        }
+                                    </div>
+                                </div>
+                                <ejs-breadcrumb id="breadcrumb" 
+                                separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")"></ejs-breadcrumb>
+                            </div>
+                        </div>
+                    </div>
                     @RenderBody()
                 </main>
             </div>
         </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - WebApplication1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

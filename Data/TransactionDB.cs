@@ -15,5 +15,6 @@ namespace WebApplication1.Data
         }
 
         public DbSet<WebApplication1.Models.Category> Category { get; set; } = default!;
+        public DbSet<WebApplication1.Models.Transaction> Transaction { get; set; } = default!;
     }
 }

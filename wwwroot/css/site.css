@@ -31,6 +31,12 @@ body {
     font-size: x-large;
 }
 
+/*BreadCrumb*/
+.e-breadcrumb a, .e-breadcrumb a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 /*button*/
 .btn:focus, .btn:active {
     outline: none !important;
