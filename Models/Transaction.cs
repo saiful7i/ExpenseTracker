@@ -9,7 +9,7 @@ namespace WebApplication1.Models
         public int TransactionId { get; set; }
 
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
 
         public int Amount { get; set; }
 
@@ -17,5 +17,23 @@ namespace WebApplication1.Models
         public string? Note { get; set; }
 
         public DateTime Date { get; set; } = DateTime.Now;
+
+        [NotMapped]
+        public string? CategoryTitle
+        {
+            get
+            {
+                return this.Category == null ? "" : Category.Icon + " " + Category.Title;
+            }
+        }
+
+        [NotMapped]
+        public string? FormtedAmount
+        {
+            get
+            {
+                return ((Category == null || Category.Type == "Expense") ? "- " : "+ ") + Amount.ToString("c0");
+            }
+        }
     }
 }
